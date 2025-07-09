@@ -1,2 +1,3 @@
 Hey Peoples,
-   In this repo I will Share My Java Practice Problems, So if you also want to learn java so you can follow this Repo for better Practice. 
+   In this repo I will Share My Java Practice Problems, So if you also want to learn java so you can follow this Repo for better Practice.
+  09/07/2025 edit #1 Recently i complete my java Projects Go check it out
