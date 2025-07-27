@@ -1,4 +1,5 @@
-public class Human {
+package tools;
+public class Human extends HomoSapien {
     private int age;
     private String name;
 
