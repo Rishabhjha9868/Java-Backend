@@ -1,8 +1,11 @@
 class A
 {
-	public void show() 
+	public void slow() 
 	{
 		System.out.println("in A show");
+	}
+
+	public void show() {
 	}
 }
 //class B extends A
