@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    <bean id = "alien" class =" org.example.Alien" scope = "prototype"/>   scope-->
+    <bean id = "alien" class =" org.example.Alien" autowire="byType" >   <!--        object create for alien class-->
+
+        <property name="age" value="21"/>
+        <property name="computer"  >
+            <bean id = "computer" class =" org.example.Laptop" primary="true" />
+        </property>     <!--        ref injection-->
+<!--       <property name="age" value="23" />   setter injection-->
+
+<!--        <constructor-arg type="org.example.Laptop" ref="alien1" />-->
+<!--        <constructor-arg type="int" value="23"/>-->
+
+<!--        <constructor-arg index="0" ref="alien1" />-->
+<!--        <constructor-arg index="1" value="23"/>-->
+
+<!--        <constructor-arg name="lap" ref="alien1" />-->
+<!--        <constructor-arg name="age" value="23"/>-->
+    </bean>
+
+<!--    <bean id = "computer" class =" org.example.Laptop" primary="true" />  &lt;!&ndash;    object create for laptop&ndash;&gt;-->
+    <bean id="computer2" class ="org.example.Desktop" lazy-init="true" />
+
+</beans>

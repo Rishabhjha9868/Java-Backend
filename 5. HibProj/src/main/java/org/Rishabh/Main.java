@@ -2,28 +2,30 @@ package org.Rishabh;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+
         Student s1 = new Student();
-        s1.setStudentId(109);
-        s1.setStudentName("Ayush");
-        s1.setStudentAge(27);
+        s1.setRollNo(106);
+        s1.setsName("Avni");
+        s1.setsAge(21);
 
-        Configuration config = new Configuration();     //create object of config
-        config.addAnnotatedClass(org.Rishabh.Student.class);  //addAnnotated class under org.Rishabh
-        config.configure();                             //load the xml
-        SessionFactory sf = config.buildSessionFactory();   //building sessionfactory
-        Session session =sf.openSession();              //open Session
-        session.persist(s1);
+        Student s2 = null;
 
-        Transaction transaction = session.beginTransaction();  //for every save we need to commit first
-        transaction.commit();
+        SessionFactory sf = new Configuration()
+                .configure()
+                .addAnnotatedClass(org.Rishabh.Student.class)
+                .buildSessionFactory();
 
-        System.out.println(s1);
+        Session session = sf.openSession();
+        s2 = session.find(Student.class, 101);
+
+        session.close();
+        sf.close();
+        System.out.println(s2);
+
     }
+
 }
