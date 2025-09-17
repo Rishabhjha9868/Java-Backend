@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="student" class="com.spring.Student" scope="prototype" autowire="byType">
+        <property name="rNo" value="1"/>
+        <property name="name" value="Rishabh"/>
+        <property name="marks" value="51"/>
+<!--        <property name="School" ref="School"/>-->
+
+<!--        Constructor Injection-->
+<!--        <constructor-arg name="rNo" value="1"/>-->
+<!--        <constructor-arg name="name" value="Rohan"/>-->
+<!--        <constructor-arg name="marks" value="50"/>-->
+<!--        <constructor-arg name="School1" ref="School" />-->
+    </bean>
+
+    <bean name="School" class="com.spring.NewStudent" />
+    <bean name="School1" class="com.spring.TopperStudent" primary="true"/>
+
+
+
+
+
+
+
+</beans>
